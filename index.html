@@ -57,7 +57,6 @@
   .chip-weak p{margin:0; font-size:clamp(15px,1.5vw,25px); color:var(--faint);}
   .chips .aside{flex:1; min-width:280px; display:flex; align-items:center;}
   .chips .aside p{margin:0; font-size:clamp(14px,1.35vw,23px); line-height:1.8; color:var(--muted);}
-  .punch{margin:0; font-size:clamp(18px,1.95vw,34px); font-weight:700; color:var(--accent);}
   .four{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
   .four div{padding:clamp(16px,2vh,26px) clamp(16px,1.6vw,28px); border-top:4px solid var(--accent);
             background:var(--paper2);}
@@ -83,11 +82,6 @@
   .shot{display:block; width:100%; box-sizing:border-box; background:#FFFFFF;
         padding:clamp(10px,1vw,20px);}
   .shot img{display:block; width:100%; height:auto;}
-
-  .mfoot{display:flex; justify-content:space-between; align-items:baseline; gap:16px;
-         padding-top:clamp(16px,2vh,26px); border-top:1px solid var(--rule);
-         font-size:clamp(11px,1vw,19px); color:var(--faint);}
-  .mfoot .num{font-family:var(--ui);}
 
   /* chrome */
   #bar{position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0; z-index:9; transition:width .12s linear;}
@@ -117,7 +111,6 @@
 
 <section class="slide" data-note="5分間です。伝えたいことは一つだけ、「階層はデザイナー自身の理解の外化だ」ということ。導入は短く、すぐ次へ。">
   <div class="wrap stackv">
-    <p class="eyebrow">Hierarchy is Everything</p>
     <h1>階層は、<br>デザイナーの理解そのもの</h1>
     <p class="sub">わかりやすさは、どこから来るのか</p>
   </div>
@@ -127,21 +120,19 @@
 <section class="slide" data-note="つかみ。学生時代の言葉として紹介する。強い言葉なので、言い切ったあと一拍おく。ここで会場の空気を作る。約40秒。">
   <div class="wrap stackv">
     <h2>使えないユーザーなんて、いない。<br>あるのは、<span class="hl">わかるように作られていない設計</span>だけ。</h2>
-    <p class="lead">ユーザーが使い方に迷ったら、それはユーザーのせいじゃない。<br>学生のころ、まわりでよく言っていた言葉です。</p>
+    <p class="lead">学生のころ、まわりでよく言っていた言葉です。</p>
   </div>
 </section>
 
 <section class="slide" data-note="主張。上司の「フィードバック／生命感」の話にそっと接続しておくと、最後の締めが効く。「動きや反応の前に、まず伝わること」と一言添えてもよい。約45秒。">
   <div class="wrap stackv">
-    <p class="eyebrow">What matters most</p>
     <h2>UIで一番大事なのは、<br>この画面が何なのか、<br>自然に「わかる」こと。</h2>
-    <p class="lead">操作も、体験も、満足も、全部そのあとに来る。<br>わからなければ、そもそも何も始まらない。</p>
+    <p class="lead">操作も、体験も、満足も、全部そのあとに来る。</p>
   </div>
 </section>
 
 <section class="slide" data-note="ここが心臓。ゆっくり言う。階層は見た目を整える作業ではなく、まずデザイナーが情報を理解する作業だということ。この一文だけ持ち帰ってもらえればいい。約45秒。">
   <div class="wrap stackv">
-    <p class="eyebrow">The point</p>
     <h2>階層は、<br>デザイナー自身の理解が<br><span class="hl">そのまま画面に出たもの</span>。</h2>
     <hr class="rule">
     <p class="lead">自分の中で「何が主役か」が決まっていない画面は、<br>どう並べ替えても、必ず平らになる。</p>
@@ -154,9 +145,8 @@
     <div class="chips">
       <div class="chip-weak"><p>大きさ</p></div>
       <div class="chip-weak"><p>太さ・濃さ</p></div>
-      <div class="aside"><p>誰でも最初に思いつく2つ。<br>でもこれだけだと、画面は「全部が主張する」状態になる。</p></div>
+      <div class="aside"><p>これだけだと、画面は「全部が主張する」状態になる。</p></div>
     </div>
-    <p class="punch">本当に効くのは、この4つ。</p>
     <div class="four">
       <div><p>01　すべてを同じ強さにしない</p></div>
       <div><p>02　脇役を弱める</p></div>
@@ -171,15 +161,14 @@
     <div class="mcols">
       <div class="mtext">
         <header class="mhead">
-          <p class="eyebrow">01 — Not all equal</p>
+          <p class="eyebrow">01 / 04 — Not all equal</p>
           <h2>すべての要素は、<br>同じ重さじゃない</h2>
-          <p class="lede">画面の中身が全部おなじ強さで目に入ってくると、どこを見ればいいのかわからなくなる。貼り紙だらけの壁と同じ。</p>
+          <p class="lede">全部がおなじ強さだと、貼り紙だらけの壁と同じ。どこを見ればいいのかわからない。</p>
           <div class="ask">
             <p class="ask-l">レビュー前の自問</p>
             <p class="ask-q">この画面で、一番先に見てほしいものはどれ？</p>
           </div>
         </header>
-        <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">01 / 04</span></div>
       </div>
       <div class="shots">
         <span class="shot"><img src="images/01-a.png" alt="すべてが同じ強さで並んでいる画面"></span>
@@ -194,7 +183,7 @@
     <div class="mcols">
       <div class="mtext">
         <header class="mhead">
-          <p class="eyebrow">02 — De-emphasis</p>
+          <p class="eyebrow">02 / 04 — De-emphasis</p>
           <h2>主役を立てるには、<br>脇役を弱める</h2>
           <p class="lede">強調とは、強くすることじゃない。まわりのトーンを落とすこと。</p>
           <div class="ask">
@@ -202,7 +191,6 @@
             <p class="ask-q">この画面で、弱めていい要素はどれ？</p>
           </div>
         </header>
-        <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">02 / 04</span></div>
       </div>
       <div class="shots">
         <span class="shot"><img src="images/02-a.png" alt="脇役を弱める前の要素"></span>
@@ -218,7 +206,7 @@
     <div class="mcols">
       <div class="mtext">
         <header class="mhead">
-          <p class="eyebrow">03 — Labels</p>
+          <p class="eyebrow">03 / 04 — Labels</p>
           <h2>ラベルは最後の手段</h2>
           <p class="lede">「開始時刻：14:00」より、「14:00」。見ればわかるものに、名前はいらない。</p>
           <div class="ask">
@@ -226,7 +214,6 @@
             <p class="ask-q">このラベル、消しても意味は伝わる？</p>
           </div>
         </header>
-        <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
       </div>
       <div class="shots">
         <span class="shot"><img src="images/03-a.png" alt="ラベルつきの表示"></span>
@@ -243,15 +230,14 @@
     <div class="mcols">
       <div class="mtext">
         <header class="mhead">
-          <p class="eyebrow">03 — But not always</p>
+          <p class="eyebrow">03 / 04 — But not always</p>
           <h2>ただし、ラベルが<br>主役になることもある</h2>
-          <p class="lede">仕様表のように情報が密な画面では、ユーザーは「厚さ」を探してから「7.6mm」を見る。ラベルのほうが、探すための手がかりになる。このとき数値を薄くしすぎないこと。どちらも大事な情報。</p>
+          <p class="lede">仕様表のような画面では、ユーザーは「厚さ」を探してから「7.6mm」を見る。ラベルのほうが手がかりになる。ただし、数値を薄くしすぎないこと。</p>
           <div class="ask">
             <p class="ask-l">レビュー前の自問</p>
             <p class="ask-q">ユーザーは値を読みに来た？それとも項目を探しに来た？</p>
           </div>
         </header>
-        <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
       </div>
       <div class="shots">
         <span class="shot"><img src="images/03-e.png" alt="仕様表。項目名が太く、数値がやや淡い"></span>
@@ -265,7 +251,7 @@
     <div class="mcols">
       <div class="mtext">
         <header class="mhead">
-          <p class="eyebrow">04 — Semantics</p>
+          <p class="eyebrow">04 / 04 — Semantics</p>
           <h2>意味の重要度 ≠<br>見た目の重要度</h2>
           <p class="lede">「削除」は機能的に重い。でも、見た目まで主役にする必要はない。</p>
           <div class="ask">
@@ -273,7 +259,6 @@
             <p class="ask-q">重要な機能＝目立たせる、になっていない？</p>
           </div>
         </header>
-        <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">04 / 04</span></div>
       </div>
       <div class="shots">
         <span class="shot"><img src="images/04-a.png" alt="意味の重さをそのまま見た目にした例"></span>
@@ -286,7 +271,7 @@
 <section class="slide" data-note="締め。上司の「フィードバック／インタラクション」のテーマに接続する一言。動きや反応の設計の前に、まず伝わることがある、という順番の話で終える。約20秒。">
   <div class="wrap stackv">
     <h2>動く前に、<br>まず「<span class="hl">伝わる</span>」こと。</h2>
-    <p class="lead">階層は、デザイナーが最初にやる仕事だと思っています。<br>自分が理解できていないものは、誰にも伝わらないので。</p>
+    <p class="lead">階層は、デザイナーが最初にやる仕事だと思っています。</p>
   </div>
   <p class="meta">ありがとうございました</p>
   <p class="credit">画面の例は Refactoring UI（Adam Wathan &amp; Steve Schoger）より</p>
