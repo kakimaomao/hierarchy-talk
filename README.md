@@ -28,3 +28,7 @@
 5. 締め — 動く前に、まず「伝わる」こと
 
 毛 佳倩 / PKSHA Technology
+
+## クレジット
+
+スライド内の画面の例は [Refactoring UI](https://www.refactoringui.com/)（Adam Wathan & Steve Schoger）より。

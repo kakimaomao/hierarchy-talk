@@ -43,6 +43,9 @@
 
   .meta{position:absolute; left:var(--gut); bottom:clamp(20px,3vh,52px);
         font-size:clamp(13px,1.15vw,26px); color:var(--muted); margin:0;}
+  .credit{position:absolute; right:var(--gut); bottom:clamp(20px,3vh,52px);
+          max-width:62%; margin:0; text-align:right; line-height:1.6;
+          font-size:clamp(12px,1.05vw,23px); color:var(--faint);}
   .slide{position:relative;}
 
   /* method overview */
@@ -108,6 +111,7 @@
     .shots{gap:14px;}
     .shot, .shot img{max-height:none;}
     .four{grid-template-columns:1fr 1fr;}
+    .credit{position:static; max-width:100%; text-align:left; margin-top:28px;}
     #hint{display:none;}
   }
 </style>
@@ -284,6 +288,7 @@
     <p class="lead">階層は、デザイナーが最初にやる仕事だと思っています。<br>自分が理解できていないものは、誰にも伝わらないので。</p>
   </div>
   <p class="meta">ありがとうございました</p>
+  <p class="credit">画面の例は Refactoring UI（Adam Wathan &amp; Steve Schoger）より</p>
 </section>
 
 <div id="notes" hidden><b>Speaker note</b><span id="ntext"></span></div>
