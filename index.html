@@ -72,11 +72,16 @@
   .cell{min-width:0; min-height:0; display:flex; align-items:center; justify-content:center;}
   .cell.col{flex-direction:column; gap:clamp(10px,1.4vw,22px);}
   .shot{min-width:0; min-height:0; max-width:100%; max-height:100%; display:flex;
-        background:#FFFFFF; border-radius:14px; padding:clamp(6px,.65vw,14px);
-        box-shadow:0 1px 3px rgba(26,29,35,.10), 0 10px 28px rgba(26,29,35,.07);}
+        background:#FFFFFF; padding:clamp(6px,.65vw,14px);}
   .shot img{display:block; min-width:0; min-height:0; max-width:100%; max-height:100%;
             width:auto; height:auto; object-fit:contain;}
   .g2{grid-template-columns:1fr 1fr;}
+  .ph{width:100%; height:100%; min-height:0; max-height:100%; display:flex;
+      align-items:center; justify-content:center; text-align:center;
+      background:#FFFFFF; border:2px dashed var(--edge);
+      padding:clamp(20px,3vw,56px); box-sizing:border-box;}
+  .ph p{margin:0; font-size:clamp(14px,1.4vw,28px); line-height:1.75; color:var(--faint);}
+  .g1{grid-template-columns:1fr;}
   .g-m3{grid-template-columns:.86fr 1.14fr;}
 
   .mfoot{display:flex; justify-content:space-between; align-items:baseline;
@@ -156,7 +161,7 @@
     <div class="four">
       <div><p>01　すべてを同じ強さにしない</p></div>
       <div><p>02　脇役を弱める</p></div>
-      <div><p>03　ラベルを消す</p></div>
+      <div><p>03　ラベルを見直す</p></div>
       <div><p>04　意味と見た目を分ける</p></div>
     </div>
   </div>
@@ -227,6 +232,26 @@
         <span class="shot"><img src="images/03-c.png" alt="ラベルを外した表示"></span>
       </div>
       <div class="cell"><span class="shot"><img src="images/03-d.png" alt="画面全体での適用例"></span></div>
+    </div>
+    <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
+  </div>
+</section>
+
+<section class="slide m" data-note="例外の話。原則を振り回していないことが伝わるので、短くても入れる価値がある。ラベルを消すのが目的ではなく、ユーザーが何を探しに来たかで決まる、と言い切る。約20秒。">
+  <div class="wrap">
+    <div class="mhead">
+      <div>
+        <p class="eyebrow">03 — But not always</p>
+        <h2>ただし、ラベルが<br>主役になることもある</h2>
+      </div>
+      <p class="lede">仕様表のように情報が密な画面では、ユーザーは「厚さ」を探してから「7.6mm」を見る。<br>ラベルのほうが、探すための手がかりになる。<br>このとき数値を薄くしすぎないこと。どちらも大事な情報。</p>
+      <div>
+        <p class="ask-l">レビュー前の自問</p>
+        <p class="ask-q">ユーザーは値を読みに来た？<br>それとも項目を探しに来た？</p>
+      </div>
+    </div>
+    <div class="shots g1">
+      <div class="cell"><div class="ph"><p>ここに実例<br>仕様表のように、項目を探しに来る画面</p></div></div>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
   </div>
