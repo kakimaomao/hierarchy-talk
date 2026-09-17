@@ -15,8 +15,10 @@
     --accent:#B04725; --accent-lt:#E08A5F; --dark:#1A1D23; --on-dark:#F0EEE9; --on-dark-2:#9BA1A8;
     --jp:'Zen Kaku Gothic New','Hiragino Sans','Noto Sans SC','PingFang SC','Microsoft YaHei',Verdana,sans-serif;
     --ui:'DM Sans',Arial,sans-serif;
-    --gut:clamp(16px,3vw,64px);
-    --pad-y:clamp(40px,6vh,104px);
+    --gut:clamp(20px,6.5vw,150px);
+    --pad-y:clamp(72px,11vh,150px);
+    --measure:820px;
+    --shotmax:1020px;
   }
   html{scroll-snap-type:y proximity; scroll-behavior:smooth; background:var(--paper);}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
@@ -26,62 +28,61 @@
 
   .slide{min-height:100svh; box-sizing:border-box; padding:var(--pad-y) var(--gut);
          display:flex; flex-direction:column; justify-content:center;
-         scroll-snap-align:start; background:var(--paper);}
-  .slide > .wrap{width:100%; max-width:1680px; margin-inline:auto;
-                 display:flex; flex-direction:column; min-height:0;}
+         scroll-snap-align:start; background:var(--paper); position:relative;}
+  .slide > .wrap{width:100%; max-width:1280px; margin-inline:auto;
+                 display:flex; flex-direction:column;}
 
-  .eyebrow{font-family:var(--ui); font-size:clamp(11px,.95vw,17px); font-weight:500;
+  .eyebrow{font-family:var(--ui); font-size:clamp(12px,1.05vw,19px); font-weight:500;
            letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin:0;}
 
-  h1{margin:0; font-size:clamp(38px,5.4vw,104px); font-weight:700; line-height:1.18; text-wrap:balance;}
-  h2{margin:0; font-size:clamp(28px,3.7vw,68px); font-weight:700; line-height:1.34; text-wrap:balance;}
-  .lead{margin:0; font-size:clamp(19px,2.15vw,38px); font-weight:400; line-height:1.7; color:var(--body);}
-  .sub{margin:0; font-size:clamp(19px,2.3vw,44px); font-weight:400; color:var(--body);}
+  h1{margin:0; font-size:clamp(38px,5.2vw,100px); font-weight:700; line-height:1.2; text-wrap:balance;}
+  h2{margin:0; font-size:clamp(28px,3.6vw,64px); font-weight:700; line-height:1.38; text-wrap:balance;}
+  .lead{margin:0; max-width:900px; font-size:clamp(19px,2.15vw,36px); font-weight:400;
+        line-height:1.85; color:var(--body);}
+  .sub{margin:0; font-size:clamp(19px,2.2vw,42px); font-weight:400; color:var(--body);}
   .hl{color:var(--accent);}
-  .stackv{display:flex; flex-direction:column; gap:clamp(18px,2.6vh,56px);}
+  .stackv{display:flex; flex-direction:column; gap:clamp(24px,3.4vh,60px);}
   .rule{width:200px; height:3px; background:var(--edge); border:0;}
 
-  .meta{position:absolute; left:var(--gut); bottom:clamp(20px,3vh,52px);
-        font-size:clamp(13px,1.15vw,26px); color:var(--muted); margin:0;}
-  .credit{position:absolute; right:var(--gut); bottom:clamp(20px,3vh,52px);
-          max-width:62%; margin:0; text-align:right; line-height:1.6;
-          font-size:clamp(12px,1.05vw,23px); color:var(--faint);}
-  .slide{position:relative;}
+  .meta{position:absolute; left:var(--gut); bottom:clamp(28px,4vh,64px);
+        font-size:clamp(13px,1.15vw,24px); color:var(--muted); margin:0;}
+  .credit{position:absolute; right:var(--gut); bottom:clamp(28px,4vh,64px);
+          max-width:52%; margin:0; text-align:right; line-height:1.6;
+          font-size:clamp(12px,1.05vw,21px); color:var(--faint);}
 
   /* method overview */
   .chips{display:flex; gap:20px; align-items:stretch; flex-wrap:wrap;}
-  .chip-weak{padding:clamp(12px,1.5vh,26px) clamp(16px,1.6vw,32px); border:1px solid var(--rule);
-             border-radius:14px; background:var(--paper2); min-width:180px;}
-  .chip-weak p{margin:0; font-size:clamp(15px,1.7vw,32px); color:var(--faint);}
-  .chips .aside{flex:1; min-width:260px; display:flex; align-items:center;}
-  .chips .aside p{margin:0; font-size:clamp(15px,1.6vw,29px); line-height:1.6; color:var(--muted);}
-  .punch{margin:0; font-size:clamp(20px,2.35vw,44px); font-weight:700; color:var(--accent);}
-  .four{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
-  .four div{padding:clamp(12px,1.5vh,26px) clamp(12px,1.4vw,28px); border-top:4px solid var(--accent); background:var(--paper2);}
-  .four p{margin:0; font-size:clamp(15px,1.5vw,27px); font-weight:500; line-height:1.5;}
+  .chip-weak{padding:clamp(14px,1.8vh,26px) clamp(18px,1.8vw,32px); border:1px solid var(--rule);
+             border-radius:14px; background:var(--paper2); min-width:190px;}
+  .chip-weak p{margin:0; font-size:clamp(16px,1.8vw,30px); color:var(--faint);}
+  .chips .aside{flex:1; min-width:280px; display:flex; align-items:center;}
+  .chips .aside p{margin:0; font-size:clamp(15px,1.6vw,27px); line-height:1.7; color:var(--muted);}
+  .punch{margin:0; font-size:clamp(20px,2.3vw,42px); font-weight:700; color:var(--accent);}
+  .four{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .four div{padding:clamp(16px,2vh,26px) clamp(16px,1.6vw,28px); border-top:4px solid var(--accent);
+            background:var(--paper2);}
+  .four p{margin:0; font-size:clamp(15px,1.5vw,26px); font-weight:500; line-height:1.5;}
 
-  /* method slides */
-  .m .wrap{gap:clamp(26px,3.4vh,52px);}
-  .mhead{display:grid; grid-template-columns:minmax(260px,1fr) minmax(260px,1.15fr) minmax(200px,.85fr);
-         gap:clamp(20px,2.4vw,48px); align-items:start;
-         padding-bottom:clamp(20px,2.6vh,36px); border-bottom:1px solid var(--rule);}
-  .mhead h2{font-size:clamp(24px,2.6vw,52px); line-height:1.28; margin-top:.35em;}
-  .mhead .lede{margin:0; font-size:clamp(16px,1.8vw,31px); line-height:1.8; color:var(--body);}
-  .ask-l{margin:0 0 .5em; font-family:var(--jp); font-size:clamp(13px,1.2vw,23px); font-weight:500;
+  /* method pages — one column, text at a readable measure */
+  .m .wrap{gap:clamp(44px,7vh,96px);}
+  .mhead{display:flex; flex-direction:column; align-items:flex-start;
+         gap:clamp(18px,2.4vh,30px); max-width:var(--measure);}
+  .mhead h2{font-size:clamp(26px,3vw,56px); line-height:1.34;}
+  .mhead .lede{margin:0; font-size:clamp(17px,1.85vw,31px); line-height:1.95; color:var(--body);}
+  .ask{border-left:3px solid var(--accent); padding-left:clamp(18px,1.7vw,30px);
+       margin-top:clamp(4px,1vh,14px);}
+  .ask-l{margin:0 0 .6em; font-family:var(--jp); font-size:clamp(13px,1.2vw,22px); font-weight:500;
          letter-spacing:.12em; color:var(--accent);}
-  .ask-q{margin:0; font-size:clamp(15px,1.5vw,27px); line-height:1.6; color:var(--muted);}
+  .ask-q{margin:0; font-size:clamp(16px,1.6vw,28px); line-height:1.7; color:var(--muted);}
 
-  .shots{display:grid; gap:clamp(14px,1.8vw,28px); align-items:start;}
-  .cell{min-width:0; display:flex; flex-direction:column; justify-content:center;
-        gap:clamp(14px,1.8vw,28px);}
-  .shot{display:block; width:100%; box-sizing:border-box; background:#FFFFFF; padding:clamp(8px,.8vw,18px);}
+  .shots{display:flex; flex-direction:column; gap:clamp(28px,4.5vh,72px);
+         width:100%; max-width:var(--shotmax);}
+  .shot{display:block; width:100%; box-sizing:border-box; background:#FFFFFF;
+        padding:clamp(10px,1vw,20px);}
   .shot img{display:block; width:100%; height:auto;}
-  .g1{grid-template-columns:1fr;}
-  .g2{grid-template-columns:1fr 1fr;}
-  .g-m3{grid-template-columns:.86fr 1.14fr;}
 
   .mfoot{display:flex; justify-content:space-between; align-items:baseline;
-         padding-top:clamp(16px,2vh,30px); font-size:clamp(12px,1.15vw,24px); color:var(--faint);}
+         padding-top:clamp(20px,2.6vh,36px); font-size:clamp(12px,1.15vw,22px); color:var(--faint);}
   .mfoot .num{font-family:var(--ui);}
 
   /* chrome */
@@ -97,11 +98,8 @@
   :focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
 
   @media (max-width:900px){
-    .slide{min-height:auto; padding-block:clamp(48px,9vh,96px);}
-    .mhead{grid-template-columns:1fr; gap:18px;}
-    .mhead h2{margin-top:.2em;}
-    .shots, .g2, .g-m3{grid-template-columns:1fr;}
-    .four{grid-template-columns:1fr 1fr;}
+    .slide{min-height:auto; padding-block:clamp(56px,10vh,96px);}
+    .four{grid-template-columns:1fr;}
     .credit{position:static; max-width:100%; text-align:left; margin-top:28px;}
     #hint{display:none;}
   }
@@ -164,20 +162,18 @@
 
 <section class="slide m" data-note="4つの入り口。全部が同じ強さだと、結局どこも見てもらえない。まず「一番先に見てほしいもの」を自分で決める、という話。約30秒。">
   <div class="wrap">
-    <div class="mhead">
-      <div>
-        <p class="eyebrow">01 — Not all equal</p>
-        <h2>すべての要素は、<br>同じ重さじゃない</h2>
-      </div>
+    <header class="mhead">
+      <p class="eyebrow">01 — Not all equal</p>
+      <h2>すべての要素は、<br>同じ重さじゃない</h2>
       <p class="lede">画面の中身が全部おなじ強さで目に入ってくると、<br>どこを見ればいいのかわからなくなる。<br>貼り紙だらけの壁と同じ。</p>
-      <div>
+      <div class="ask">
         <p class="ask-l">レビュー前の自問</p>
         <p class="ask-q">この画面で、<br>一番先に見てほしいものはどれ？</p>
       </div>
-    </div>
-    <div class="shots g2">
-      <div class="cell"><span class="shot"><img src="images/01-a.png" alt="すべてが同じ強さで並んでいる画面"></span></div>
-      <div class="cell"><span class="shot"><img src="images/01-b.png" alt="重さの順位をつけたあとの画面"></span></div>
+    </header>
+    <div class="shots">
+      <span class="shot"><img src="images/01-a.png" alt="すべてが同じ強さで並んでいる画面"></span>
+      <span class="shot"><img src="images/01-b.png" alt="重さの順位をつけたあとの画面"></span>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">01 / 04</span></div>
   </div>
@@ -185,23 +181,19 @@
 
 <section class="slide m" data-note="4つの中で一番反直感的。ここが山場なので、ゆっくり。前のスライドで自分もやっていたと振り返ってもいい。約40秒。">
   <div class="wrap">
-    <div class="mhead">
-      <div>
-        <p class="eyebrow">02 — De-emphasis</p>
-        <h2>主役を立てるには、<br>脇役を弱める</h2>
-      </div>
+    <header class="mhead">
+      <p class="eyebrow">02 — De-emphasis</p>
+      <h2>主役を立てるには、<br>脇役を弱める</h2>
       <p class="lede">強調とは、強くすることじゃない。<br>まわりのトーンを落とすこと。</p>
-      <div>
+      <div class="ask">
         <p class="ask-l">レビュー前の自問</p>
         <p class="ask-q">この画面で、<br>弱めていい要素はどれ？</p>
       </div>
-    </div>
-    <div class="shots g2">
-      <div class="cell">
-        <span class="shot"><img src="images/02-a.png" alt="脇役を弱める前の要素"></span>
-        <span class="shot"><img src="images/02-b.png" alt="脇役を弱めたあとの要素"></span>
-      </div>
-      <div class="cell"><span class="shot"><img src="images/02-c.png" alt="画面全体での適用例"></span></div>
+    </header>
+    <div class="shots">
+      <span class="shot"><img src="images/02-a.png" alt="脇役を弱める前の要素"></span>
+      <span class="shot"><img src="images/02-b.png" alt="脇役を弱めたあとの要素"></span>
+      <span class="shot"><img src="images/02-c.png" alt="画面全体での適用例"></span>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">02 / 04</span></div>
   </div>
@@ -209,24 +201,20 @@
 
 <section class="slide m" data-note="軽い手段だが効果が大きい。情報量を減らさずに、ノイズだけ減らせるという話。約30秒。">
   <div class="wrap">
-    <div class="mhead">
-      <div>
-        <p class="eyebrow">03 — Labels</p>
-        <h2>ラベルは最後の手段</h2>
-      </div>
+    <header class="mhead">
+      <p class="eyebrow">03 — Labels</p>
+      <h2>ラベルは最後の手段</h2>
       <p class="lede">「開始時刻：14:00」より、「14:00」。<br>見ればわかるものに、名前はいらない。</p>
-      <div>
+      <div class="ask">
         <p class="ask-l">レビュー前の自問</p>
         <p class="ask-q">このラベル、<br>消しても意味は伝わる？</p>
       </div>
-    </div>
-    <div class="shots g-m3">
-      <div class="cell">
-        <span class="shot"><img src="images/03-a.png" alt="ラベルつきの表示"></span>
-        <span class="shot"><img src="images/03-b.png" alt="ラベルを減らした表示"></span>
-        <span class="shot"><img src="images/03-c.png" alt="ラベルを外した表示"></span>
-      </div>
-      <div class="cell"><span class="shot"><img src="images/03-d.png" alt="画面全体での適用例"></span></div>
+    </header>
+    <div class="shots">
+      <span class="shot"><img src="images/03-a.png" alt="ラベルつきの表示"></span>
+      <span class="shot"><img src="images/03-b.png" alt="ラベルを減らした表示"></span>
+      <span class="shot"><img src="images/03-c.png" alt="ラベルを外した表示"></span>
+      <span class="shot"><img src="images/03-d.png" alt="画面全体での適用例"></span>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
   </div>
@@ -234,19 +222,17 @@
 
 <section class="slide m" data-note="例外の話。原則を振り回していないことが伝わるので、短くても入れる価値がある。ラベルを消すのが目的ではなく、ユーザーが何を探しに来たかで決まる、と言い切る。約20秒。">
   <div class="wrap">
-    <div class="mhead">
-      <div>
-        <p class="eyebrow">03 — But not always</p>
-        <h2>ただし、ラベルが<br>主役になることもある</h2>
-      </div>
+    <header class="mhead">
+      <p class="eyebrow">03 — But not always</p>
+      <h2>ただし、ラベルが<br>主役になることもある</h2>
       <p class="lede">仕様表のように情報が密な画面では、ユーザーは「厚さ」を探してから「7.6mm」を見る。<br>ラベルのほうが、探すための手がかりになる。<br>このとき数値を薄くしすぎないこと。どちらも大事な情報。</p>
-      <div>
+      <div class="ask">
         <p class="ask-l">レビュー前の自問</p>
         <p class="ask-q">ユーザーは値を読みに来た？<br>それとも項目を探しに来た？</p>
       </div>
-    </div>
-    <div class="shots g1">
-      <div class="cell"><span class="shot"><img src="images/03-e.png" alt="仕様表。項目名が太く、数値がやや淡い"></span></div>
+    </header>
+    <div class="shots">
+      <span class="shot"><img src="images/03-e.png" alt="仕様表。項目名が太く、数値がやや淡い"></span>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">03 / 04</span></div>
   </div>
@@ -254,20 +240,18 @@
 
 <section class="slide m" data-note="最後の手段。機能の重要度と、視覚の重要度は別物だという話。ここで4つ終わり。約30秒。">
   <div class="wrap">
-    <div class="mhead">
-      <div>
-        <p class="eyebrow">04 — Semantics</p>
-        <h2>意味の重要度 ≠<br>見た目の重要度</h2>
-      </div>
+    <header class="mhead">
+      <p class="eyebrow">04 — Semantics</p>
+      <h2>意味の重要度 ≠<br>見た目の重要度</h2>
       <p class="lede">「削除」は機能的に重い。<br>でも、見た目まで主役にする必要はない。</p>
-      <div>
+      <div class="ask">
         <p class="ask-l">レビュー前の自問</p>
         <p class="ask-q">重要な機能＝目立たせる、<br>になっていない？</p>
       </div>
-    </div>
-    <div class="shots g2">
-      <div class="cell"><span class="shot"><img src="images/04-a.png" alt="意味の重さをそのまま見た目にした例"></span></div>
-      <div class="cell"><span class="shot"><img src="images/04-b.png" alt="見た目の重さを整理した例"></span></div>
+    </header>
+    <div class="shots">
+      <span class="shot"><img src="images/04-a.png" alt="意味の重さをそのまま見た目にした例"></span>
+      <span class="shot"><img src="images/04-b.png" alt="見た目の重さを整理した例"></span>
     </div>
     <div class="mfoot"><span>階層をつくる4つの手段</span><span class="num">04 / 04</span></div>
   </div>
