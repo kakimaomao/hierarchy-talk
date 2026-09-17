@@ -297,9 +297,10 @@
   var ntext = document.getElementById('ntext');
   var hint = document.getElementById('hint');
   var notesOn = false;
+  var target = null, settle = null;
 
   function current(){
-    var y = window.scrollY, best = 0, bd = Infinity;
+    var y = target !== null ? target : window.scrollY, best = 0, bd = Infinity;
     for (var i=0;i<slides.length;i++){
       var d = Math.abs(slides[i].offsetTop - y);
       if (d < bd){ bd = d; best = i; }
@@ -314,19 +315,29 @@
   function go(dir){
     var i = current(), s = slides[i], vh = window.innerHeight;
     var bottom = s.offsetTop + s.offsetHeight;
+    var slack = vh * 0.2;
     if (dir > 0){
-      if (bottom - (window.scrollY + vh) > 24){
-        window.scrollTo({top: Math.min(window.scrollY + vh * 0.86, bottom - vh)});
+      if (bottom - (window.scrollY + vh) > slack){
+        jump(Math.min((target!==null?target:window.scrollY) + vh * 0.86, bottom - vh));
         return;
       }
-      if (i < slides.length - 1) window.scrollTo({top: slides[i+1].offsetTop});
+      if (i < slides.length - 1) jump(slides[i+1].offsetTop);
+      else jump(s.offsetTop);
     } else {
-      if (window.scrollY - s.offsetTop > 24){
-        window.scrollTo({top: Math.max(window.scrollY - vh * 0.86, s.offsetTop)});
+      if ((target!==null?target:window.scrollY) - s.offsetTop > slack){
+        jump(s.offsetTop);
         return;
       }
-      if (i > 0) window.scrollTo({top: slides[i-1].offsetTop});
+      if (i > 0) jump(slides[i-1].offsetTop);
+      else jump(0);
     }
+  }
+  var rawScrollTo = window.scrollTo.bind(window);
+  function jump(top){
+    target = Math.max(0, Math.round(top));
+    rawScrollTo({top: target});
+    clearTimeout(settle);
+    settle = setTimeout(function(){ target = null; }, 700);
   }
   addEventListener('scroll', paint, {passive:true});
   addEventListener('resize', paint);
@@ -335,8 +346,8 @@
     var k = e.key;
     if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' '){ e.preventDefault(); go(1); }
     else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp'){ e.preventDefault(); go(-1); }
-    else if (k === 'Home'){ e.preventDefault(); window.scrollTo({top:0}); }
-    else if (k === 'End'){ e.preventDefault(); window.scrollTo({top: slides[slides.length-1].offsetTop}); }
+    else if (k === 'Home'){ e.preventDefault(); jump(0); }
+    else if (k === 'End'){ e.preventDefault(); jump(slides[slides.length-1].offsetTop); }
     else if (k === 'n' || k === 'N'){ notesOn = !notesOn; notes.hidden = !notesOn; paint(); }
     else if (k === 'f' || k === 'F'){
       if (document.fullscreenElement) document.exitFullscreen && document.exitFullscreen();
